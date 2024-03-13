@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<order>
+ <client>
+  <full-name>John Doe</full-name>
+  <contact-phone>+123456789</contact-phone>
+ </client>
+ <!--
+ hm1:
+ - add delivery info
+ - draw the diagram of this order
+order
+|
++- client
+|  |
+|  +- full-name
+|  |  |
+|  |  +- #text: "John Doe"
+|  +- contact-phone
+|     |
+|     +- #text: "+123456789"
++- delivery
+|  |
+|  +- address
+|  |  |
+|  |  +- #text: "Calea BASARABIEI 10"
+|  +- totalCost
+|     |
+|     +- #text: "900.00"
++- items
+  |
+  +- item
+  |  |
+  |  +- name
+  |  |  |
+  |  |  +- #text: "Pizza"
+  |  +- quantity
+  |  |  |
+  |  |  +- #text: "1"
+  |  +- price
+  |     |
+  |     +- #text: "100.00"
+  +- item
+  |  |
+  |  +- name
+  |  |  |
+  |  |  +- #text: "Salad"
+  |  +- quantity
+  |  |  |
+  |  |  +- #text: "2"
+  |  +- price
+  |     |
+  |     +- #text: "50.00"
+  +- item
+  |  |
+  |  +- name
+  |  |  |
+  |  |  +- #text: "Wine"
+  |  +- quantity
+  |  |  |
+  |  |  +- #text: "1"
+  |  +- price
+  |     |
+  |     +- #text: "750.00"
+ -->
+ <delivery>
+     <address>Calea Basarabiei 10</address>
+     <totalCost>900.00</totalCost>
+ </delivery>
+ <items>
+     <item>
+         <name>Pizza</name>
+         <quantity>1</quantity>
+         <price>100.00</price>
+     </item>
+     <item>
+         <name>Salad</name>
+         <quantity>2</quantity>
+         <price>50.00</price>
+     </item>
+     <item>
+         <name>Wine</name>
+         <quantity>1</quantity>
+         <price>750.00</price>
+     </item>
+ </items>
+</order>
+<!--
+hm2: as a separate xml file choose a theme: book, film, profile acc, game, ...
+-->

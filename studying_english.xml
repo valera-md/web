@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+hm2: as a separate xml file choose a theme: book, film, profile acc, game, ...
+-->
+<studyingEnglish>
+ <inClass>do a lot of exercises</inClass>
+ <inClass>have dictations</inClass>
+ <inClass>translate from German into Englush</inClass>
+ <afterClasses>speak English</afterClasses>
+ <afterClasses>do homework</afterClasses>
+ <afterClasses>write English sentences</afterClasses>
+ <afterClasses>go for a walk</afterClasses>
+ <onWeek-end>came and see our friends</onWeek-end>
+ <onWeek-end>go to cinema</onWeek-end>
+ <onWeek-end>skate on the skating rink</onWeek-end>
+<studyingEnglish>
+
