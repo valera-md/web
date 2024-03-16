@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Form Example</title>
+</head>
+<body>
+    <form action="thankyou.html">
+        <h1>Apply for TRAINING</h1>
+        Your name: <input type="text" required/><br/>
+        Yuor email: <input type="text"/><br/>
+        phone: <input type="text" required/><br/>
+
+        <br/>
+        Choose course:<br/>
+        <select>
+            <option value="">HTML Basics Training</option>
+            <option value="">CSS Basics Training</option>
+        <select>
+        <br/>
+        Choose Hours:<br/>
+        <select>
+            <option>09:00</option>
+            <option>10:00</option>
+            <option>19:00</option>
+            <option>20:00</option>
+        <select>
+        <br/>
+<!--
+HW1: Add a checkbox input 
+[x] I accept the terms and conditions.
+HW2: make required fullname, phone, checkbox
+HW3: terms -> <a> -> terms.html
+-->
+        <input type="checkbox" required/> I accept the <a href="terms.html">terms</a> and conditions.
+        <hr/>
+        <button>APPLY</button>
+    </form>
+</body>
+</html>
+<!--
+HTML не является как таковым языком программирования. Он является языком структурирования. Поэтому в самом HTML обрабатывать данные которые будет вводить человек мы в принципе не сможем. Он служит больше как интерфейс.
+HTML FORMS:
+form - paried - container
+ + action -> URL
+ + method -> HOW?
+  - input - single
+   + type
+  - textarea - paread
+  - select/option - paried, drop down list, выпадающий список
+  - button - paried, чаще используется для оптправки данных
+  - label - paired
+Суть тега form это основной контейнер формы. То есть все поля, кнопки, списки, галочки, поля для ввода текста и так далее работает как одно целое. То есть передаёт информацию связанную с каким-то действием: поиск, регистраци, фильтр и так далее и тому подобное. Всё это одевается обычно в некий общий form. Для любой другой цели создаётся другой form. Напрмер, если человек с одной и той же страцици должен иметь возможность и регистрироваться, и авторизовываться, то чаще всего это будет создано с помощью двух разных форм.
+Кнопки, которые высылают данные должны находится внутри формы, чтобы срабатывать.
+-->
