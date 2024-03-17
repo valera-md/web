@@ -7,8 +7,7 @@ import psycopg2
 from datetime import datetime
 
 def connect():
- conn = psycopg2.connect("dbname=chat_db user=postgres password=1234")
- #conn = psycopg2.connect("dbname=chat_db user=postgres password=qazwsx host=localhost port=5889")
+ conn = psycopg2.connect("dbname=chat_db user=postgres password=password host=localhost port=5889")
  curs = conn.cursor()
  return conn, curs
 
