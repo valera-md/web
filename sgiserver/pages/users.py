@@ -1,7 +1,7 @@
 print() # /n
 
 import sys
-sys.path.append("F:/Maxtor/Valera/Python/web/server")
+sys.path.append("F:/Python/web/server")
 
 #import psycopg2
 from orm.Client import *
