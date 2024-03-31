@@ -21,15 +21,15 @@ def homePage(request):
 
 def buyPage(request, option_id):
     #return HttpResponse(f"You want to buy option {option_id}")
-    option = Option.objects.get(pk=option_id)
+    option = Option.objects.get(pk = option_id)
     return render(request, 'subscribe.html', {'option': option})
 
 def payConfirmPage(request, subscription_id):
-    subscription = Subscription.objects.get(pk=subscription_id)
+    subscription = Subscription.objects.get(pk = subscription_id)
     subscription.payed = True
     subscription.save()
-    client = Client.objects.get(pk=subscription.client_id)
-    option = Option.objects.get(pk=subscription.option_id)
+    client = Client.objects.get(pk = subscription.client_id)
+    option = Option.objects.get(pk = subscription.option_id)
     # HM3: render page
     return render(request, 'subscription.html', {'client': client, 'option': option})
     #return HttpResponse(f'Your subscription is Active!')
@@ -45,14 +45,14 @@ def subscribePage(request, option_id):
         # HW1: add username + fullname
         fullname=request.GET.get('full-name')
         list=fullname.split()
-        first_name=list[0]
-        last_name=list[1]
+        first_name = list[0]
+        last_name = list[1]
         client = Client(
-            username=request.GET.get('username'),
-            first_name=first_name,
-            last_name=last_name,
-            email=request.GET.get('email'),
-            phone=request.GET.get('phone')
+            username = request.GET.get('username'),
+            first_name = first_name,
+            last_name = last_name,
+            email = request.GET.get('email'),
+            phone = request.GET.get('phone')
             )
         client.save()
     subscription = Subscription(
@@ -64,13 +64,13 @@ def subscribePage(request, option_id):
     # STRIPE
 
     price = stripe.Price.create(
-        currency=option.price.currency,
+        currency = option.price.currency,
         unit_amount=option.price.amount,
-        #recurring={"interval": "month"},
-        product_data={"name": option.name},
+        #recurring = {"interval": "month"},
+        product_data = {"name": option.name},
     )
     link = stripe.PaymentLink.create(
-        line_items=[{"price": price.id, "quantity": 1}],
+        line_items = [{"price": price.id, "quantity": 1}],
         after_completion = {
             'type': 'redirect',
             'redirect': {
