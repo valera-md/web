@@ -36,17 +36,17 @@ def payConfirmPage(request, subscription_id):
 
 def subscribePage(request, option_id):
     option = Option.objects.get(pk=option_id)
-    # HW1: add username + fullname
-    fullname=request.GET.get('full-name')
-    list=fullname.split()
-    first_name=list[0]
-    last_name=list[1]
     # HW2: first - find the client ?
     try:
         client = Client.objects.get(username=request.GET.get('username'))
     except Client.DoesNotExist:
         client = None
     if client == None:
+        # HW1: add username + fullname
+        fullname=request.GET.get('full-name')
+        list=fullname.split()
+        first_name=list[0]
+        last_name=list[1]
         client = Client(
             username=request.GET.get('username'),
             first_name=first_name,
