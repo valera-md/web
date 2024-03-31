@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    <h1>Chat APP</h1>
+    <!--{{ options }}-->
+    <p>To use our app, you must subscribe to one of these plans.</p>
+    <ul>
+        {% for option in options %}
+        <li>
+            <h2>{{ option.name }}</h2>
+            <p>{{ option.period }} days</p>
+            <p><strong>{{ option.price.amount }} {{ option.price.currency }}</strong></p>
+            <a href="/buy/{{option.id}}">BUY</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
