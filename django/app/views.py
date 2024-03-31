@@ -32,7 +32,7 @@ def payConfirmPage(request, subscription_id):
     option = Option.objects.get(pk = subscription.option_id)
     # HM3: render page
     return render(request, 'subscription.html', {'client': client, 'option': option})
-    #return HttpResponse(f'Your subscription is Active!')
+    #return HttpResponse('Your subscription is Active!')
 
 def subscribePage(request, option_id):
     option = Option.objects.get(pk=option_id)
@@ -80,7 +80,7 @@ def subscribePage(request, option_id):
     )
     return redirect(link.url)
     #return HttpResponse(link.url)
-    #return HttpResponse(f'Subscription received')
+    #return HttpResponse('Subscription received')
 
 def signupPage(request):
     return render(request, 'signup.html', {})
