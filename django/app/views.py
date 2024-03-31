@@ -11,7 +11,7 @@ from django.http import HttpResponse
 from app.models import Option, Client, Subscription
 
 import stripe
-stripe.api_key = "sk_test_51P0GuxHjO4astw3IYWZ9elZSnIi5TFFEyYjWoibfK9A8f6fDcPGOoImnBD5OQLRdgNMnV1ftnNp7tLDDs0jzAxlU00NvXjEFO6"
+stripe.api_key = "stripe.api_key"
 
 def homePage(request):
     options = Option.objects.all()
