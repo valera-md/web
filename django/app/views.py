@@ -47,13 +47,14 @@ def payConfirmPage(request, subscription_id):
     option = Option.objects.get(pk = subscription.option_id)
     price = Money.objects.get(pk = option.price_id)
 
-    #   HW4: add details to message body: date, period, price
+    #   HW4: add details to message body: date, period, option name, price
     '''send_mail("Subscription activated",
           f"Your subscription was activated on date - {subscription.started}, period - {option.period}, name - {option.name}, price - {price.amount} {price.currency}",
           "John_Smith_012024@outlook.com",
           [subscription.client.email],
           fail_silently=False,      
           )'''
+    #   HW4: add details to message body: date, period, option name, price, picture
     email = EmailMessage(
     'Subscription activated',
     f"Your subscription was activated on date - {subscription.started}, period - {option.period}, name - {option.name}, price - {price.amount} {price.currency}",
