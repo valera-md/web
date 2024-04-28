@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHAT WITH BOT</title>
+</head>
+<body>
+    <h1>CHAT WITH BOT</h1>
+    {% autoescape off %}{{test}}{% endautoescape %}
+    <ol>
+        {% for message in messages %}
+        <li>
+            {% if message.type == 'reply' %} -- {% endif %} 
+            {% autoescape off %}{{message.body}}{% endautoescape %}
+        </li>
+        {% endfor %}
+    {% comment %}<li>
+            John: Hello!
+        </li>
+        <li>
+            Bot: Hi, how can I help?
+        </li> {% endcomment %}
+    </ol>
+    <form action="/chat-action" method="POST">
+        <input name="body" type="text" placeholder="enter reply here..."/>
+        {% csrf_token %}
+        <button>SEND</button>
+    </form>
+</body>
+</html>
