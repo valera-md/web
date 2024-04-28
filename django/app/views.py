@@ -24,7 +24,7 @@ import json
 import markdown
 
 import stripe
-stripe.api_key = "sk_test_51P0GuxHjO4astw3IYWZ9elZSnIi5TFFEyYjWoibfK9A8f6fDcPGOoImnBD5OQLRdgNMnV1ftnNp7tLDDs0jzAxlU00NvXjEFO6"
+stripe.api_key = "api_key"
 
 def homePage(request):
     options = Option.objects.all()
@@ -54,7 +54,7 @@ def payConfirmPage(request, subscription_id):
           [subscription.client.email],
           fail_silently=False,      
           )'''
-    '''email = EmailMessage(
+    email = EmailMessage(
     'Subscription activated',
     f"Your subscription was activated on date - {subscription.started}, period - {option.period}, name - {option.name}, price - {price.amount} {price.currency}",
     "John_Smith_012024@outlook.com",
@@ -64,7 +64,7 @@ def payConfirmPage(request, subscription_id):
     file = os.path.join(cur, "subscription.webp")
     img_data = open(file, "rb")
     email.attach('subscription.webp', img_data.read()) # email.attach('subscription.webp', img_data.read(),  'image/png')
-    email.send()'''
+    email.send()
     # print(subscription.client.email)
     # HM3: render page
     return render(request, 'subscription.html', {'client': client, 'option': option})
@@ -177,7 +177,7 @@ def chatPage(request):
         return redirect("/login")
 
 # HM*: you can still use builder pattern here
-gpt_key = 'sk-proj-jDR1ez5qoFKjFwOqVlIzT3BlbkFJmE2pWs9Zpi9BoimC4tKT'
+gpt_key = 'gpt_key'
 
 
 def chatAction(request):
