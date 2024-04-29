@@ -24,7 +24,7 @@ import json
 import markdown
 
 import stripe
-stripe.api_key = "sk_test_51P0GuxHjO4astw3IYWZ9elZSnIi5TFFEyYjWoibfK9A8f6fDcPGOoImnBD5OQLRdgNMnV1ftnNp7tLDDs0jzAxlU00NvXjEFO6"
+stripe.api_key = "api_key"
 
 def homePage(request):
     options = Option.objects.all()
@@ -184,7 +184,7 @@ def chatPage(request):
         return redirect("/login")
 
 # HM*: you can still use builder pattern here
-gpt_key = 'sk-proj-jDR1ez5qoFKjFwOqVlIzT3BlbkFJmE2pWs9Zpi9BoimC4tKT'
+gpt_key = 'gpt_key'
 
 
 def chatAction(request):
