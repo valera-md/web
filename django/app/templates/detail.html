@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Option Detail | {{ option.name }}</title>
+</head>
+<body>
+    <h1>Details for plan "{{ option.name }}"</h1>
+    <p>"{{ option.description }}</p>
+    <p>{{ option.period }} days</p>
+    <p><strong>{{ option.price.amount }} {{ option.price.currency }}</strong></p>
+    {% comment %} HM2: add the buy link {% endcomment %}
+    <a href="/buy/{{option.id}}">BUY</a>
+    
+</body>
+</html>
